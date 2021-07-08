@@ -1,4 +1,5 @@
 local oEscalatorManager = EscalatorManager.Init()
+local oAudioManager = AudioManager.Init(oEscalatorManager)
 
 addEventHandler("onClientResourceStart", resourceRoot,
 	function()
@@ -9,5 +10,12 @@ addEventHandler("onClientResourceStart", resourceRoot,
 addEventHandler("onClientPreRender", root,
 	function(fTimeDelta)
 		oEscalatorManager:Update(fTimeDelta)
+		oAudioManager:Update(fTimeDelta)
+	end
+)
+
+addEventHandler("onClientRender", root,
+	function()
+		oAudioManager:ProcessEscalators()
 	end
 )

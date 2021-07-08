@@ -26,6 +26,9 @@ local ms_modelInfoPtrs = {
 	},
 }
 
+engineSetModelLODDistance(ms_modelInfoPtrs.ESC_STEP.m_iModelId, 50)
+engineSetModelLODDistance(ms_modelInfoPtrs.ESC_STEP_8.m_iModelId, 50)
+
 function Escalator.AddThisOne(vecStart, vecBottom, vecTop, vecEnd, bMoveDown)
 	local self = setmetatable({}, Escalator)
 
@@ -74,6 +77,14 @@ function Escalator.AddThisOne(vecStart, vecBottom, vecTop, vecEnd, bMoveDown)
 	self.m_pSteps = {}
 
 	return self
+end
+
+function Escalator:GetPosition()
+	return self.m_vecMidPoint
+end
+
+function Escalator:GetIsActive()
+	return not not self.m_bIsActive
 end
 
 function Escalator:GetIsMoving()

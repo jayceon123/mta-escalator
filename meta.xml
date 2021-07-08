@@ -1,0 +1,11 @@
+<meta>
+	<!-- Misc -->
+	<min_mta_version client="1.5.8" server="1.5.8" />
+
+	<!-- Classes -->
+	<script type="client" src="Escalator.lua" cache="false" />
+	<script type="client" src="EscalatorManager.lua" cache="false" />
+
+	<!-- Main -->
+	<script type="client" src="Main.lua" cache="false" />
+</meta>
